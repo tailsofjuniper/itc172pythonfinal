@@ -3,31 +3,30 @@ from  django.contrib.auth.models import User
 
 # Create your models here.
 
-class Meeting(models.Model):
-    meetingname = models.CharField(max_length=255)
-    meetingdate = models.DateField(max_length=255)
-    meetingtime = models.TimeField(max_length=255)
-    meetinglocation = models.CharField(max_length=255)
-    meetingagenda = models.TextField()
+class Todo(models.Model):
+    todoname = models.CharField(max_length=255)
+    tododate = models.DateField(max_length=255)
+    todotime = models.TimeField(max_length=255)
+    todolocation = models.CharField(max_length=255)
 
     def __str__(self):
-        return self.meetingname
+        return self.todoname
  
     class Meta:
-        db_table='meeting'
-        verbose_name_plural='meetings'
+        db_table='todo'
+        verbose_name_plural='todos'
     
 
-class MeetingMinutes(models.Model):
-    meetingid=models.ForeignKey(Meeting, on_delete=models.DO_NOTHING)
-    meetingattendance=models.ManyToManyField(User)
+class Details(models.Model):
+    todoid=models.ForeignKey(Todo, on_delete=models.DO_NOTHING)
+    todoattendance=models.ManyToManyField(User)
     minutestext=models.TextField()
     
     def __str__(self):
-        return self.meetingid
+        return self.todoid
  
     class Meta:
-        db_table='meetingminutes'
+        db_table='todominutes'
 
 class Resource(models.Model):
     resourcename=models.CharField(max_length=255)
