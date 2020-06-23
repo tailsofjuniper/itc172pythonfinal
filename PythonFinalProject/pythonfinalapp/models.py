@@ -19,7 +19,7 @@ class Todo(models.Model):
 
 class Details(models.Model):
     todoid=models.ForeignKey(Todo, on_delete=models.DO_NOTHING)
-    todoname=models.ForeignKey(Todo, on_delete=models.DO_NOTHING)
+    todoname=models.TextField()
     todoagenda=models.TextField()
     
     def __str__(self):

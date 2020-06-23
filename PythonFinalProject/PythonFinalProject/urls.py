@@ -20,6 +20,6 @@ from pythonfinalapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('todo/', include('todo.urls')),
-    path('details/', include('details.urls'))
+    path('todo/', views.todo, name='todo'),
+    path('details/', views.details, name='details')
 ]

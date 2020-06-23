@@ -5,10 +5,10 @@ def index (request):
     return render(request, 'finalapp/index.html')
 # Create your views here.
 
-def gettodo (request):
+def todo (request):
     todo_list=Todo.objects.all()
     return render(request, 'finalapp/todo.html' ,{'todo_list' : todo_list})
-def getdetails (request, id):
+def details (request, id):
     todo_detail=get_object_or_404(Details, pk=id)
     todo_location=todo_detail.todolocation
 
