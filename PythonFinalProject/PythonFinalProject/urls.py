@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from pythonfinalapp import views
+# from django.views import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,6 +24,6 @@ urlpatterns = [
     # path('todo/', include('todo.urls'))
     path('todo/', views.todo, name='todo'),
     path('details/', views.details, name='details'),
-    path('loginmessage/', views.loginmessage, name='loginmessage'),
-    path('logoutmessage/', views.logoutmessage, name='logoutmessage'),
+    path('login/', views.loginmessage, name='loginmessage'),
+    path('logout/', views.logoutmessage, name='logoutmessage'),
 ]
