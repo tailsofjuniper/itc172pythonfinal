@@ -20,6 +20,10 @@ from pythonfinalapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
+    # path('details/', include('details.urls')),
+    # path('todo/', include('todo.urls'))
     path('todo/', views.todo, name='todo'),
-    path('details/', views.details, name='details')
+    path('details/', views.details, name='details'),
+    path('loginmessage/', views.loginmessage, name='loginmessage'),
+    path('logoutmessage/', views.logoutmessage, name='logoutmessage'),
 ]
